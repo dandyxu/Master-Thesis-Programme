@@ -11,7 +11,7 @@ public class CSVRecognize {
 		Scanner scanner = new Scanner(new File("Zuzel.csv"));
 
 		// Set Delimiter used in file
-		scanner.useDelimiter(" ");
+		scanner.useDelimiter(",");
 
 		// print all the data of file
 		while (scanner.hasNext()) {
@@ -34,17 +34,18 @@ public class CSVRecognize {
 		System.out.println("Hello");
 
 	}
-
+	
+	//select metric
 	public static void selectMetric(int i) {
-
+		//print all cbo values
 		if (i == 1) {
-			System.out.println("Please input all CBO values: ");
-			Scanner sc = new Scanner(System.in);
-			int[] a = new int[29];
-			for (int j = 0; j < a.length; j++) {
-				int cbo = sc.nextInt();
+			int[] a = new int[30];
+			for (int j = 0; j < 30; j++) {
+				int cbo = 0;
+				//popup();
 			}
-			popup();
+		}else if (i == 2){
+			System.out.println("...");
 		}
 
 	}

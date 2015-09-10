@@ -1,4 +1,4 @@
-package com.March11;
+package com.May13;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -12,8 +12,8 @@ public class CsvTestExcel {
 	private BufferedReader inStream = null;
 	
 	//Declaration of returning vector
-	private Vector<String> vContent = null;
-	
+	private Vector <String> vContent = null;
+	 
 	/**
 	 * Constructor
 	 * find the local csv File
@@ -61,25 +61,31 @@ public class CsvTestExcel {
 	/**
 	 * This method is used to read next logic row in csv file
 	 * Content is stored in vector
-	 * @return
+	 * @return Return value is used to flag whether read to the end
 	 * @throws IOException
 	 * @throws Exception
 	 */
 	public boolean readCSVNextRecord()throws IOException, Exception{
+		//if stream is not initial, return false
 		if (inStream == null) {
 			return false;
 		}
 		
+		//if vContent is not initial, then init vContent
 		if (vContent == null) {
 			vContent = new Vector<String>();
 		}
 		
+		//remove former elements
 		vContent.removeAllElements();
 		
+		//Declaration of logic line
 		String logicLineStr = "";
 		
+		//Used to store rows which already read
 		StringBuilder strb = new StringBuilder();
 		
+		//Declaration whether it is the flag of logic line
 		boolean isLogicLine = false;
 		
 		try {
@@ -92,17 +98,13 @@ public class CsvTestExcel {
 					break;
 				}
 				
-				if (newLineStr.startsWith("#")) {
-					//Remove comments
-					continue;
-				}
-				
 				if (!strb.toString().equals("")) {
 					strb.append("/r/n");
 				}
 				
 				strb.append(newLineStr);
 				String oldLineString = strb.toString();
+				
 				if (oldLineString.indexOf(",") == -1) {
 					if (containsNumber(oldLineString,"\"")%2 == 0) {
 						isLogicLine = true;
@@ -153,9 +155,11 @@ public class CsvTestExcel {
 			}
 			throw e;
 		}
+		
 		if (strb == null) {
 			return false;
 		}
+		
 		logicLineStr = strb.toString();
 		if (logicLineStr != null) {
 			while (!logicLineStr.equals("")) {
@@ -169,11 +173,16 @@ public class CsvTestExcel {
 		return true;
 	}
 	
+	/**
+	 * Read one logic line's first string and return the rest string
+	 * @param lineString
+	 * @return first string and the rest logic line's content
+	 */
 	public String[] readAtomString(String lineString){
-		String atomString = "";
-		String orgString = "";
-		String[] ret = new String[2];
-		boolean isAtom = false;
+		String atomString = ""; //atom string willing to read
+		String orgString = "";  //store original string
+		String[] ret = new String[2]; //array to be returned
+		boolean isAtom = false; //the flag of atom string
 		String[] commaStr = lineString.split(",");
 		while (!isAtom) {
 			for (String str: commaStr) {
@@ -321,6 +330,5 @@ public class CsvTestExcel {
 		} while(strValue.trim().startsWith("#") || isLineEmpty);
 			return true;
 	}
-
 
 }
