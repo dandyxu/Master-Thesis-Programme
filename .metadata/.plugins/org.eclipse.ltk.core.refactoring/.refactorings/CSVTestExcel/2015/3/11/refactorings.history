@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.March10&apos; to &apos;CSVRecognize/src&apos;&#x0A;- Original project: &apos;CSVTestExcel&apos;&#x0A;- Destination element: &apos;CSVRecognize/src&apos;&#x0A;- Original element: &apos;CSVTestExcel/src/com.March10&apos;" description="Copy package" destination="=CSVRecognize/src" element1="/src&lt;com.March10" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1426008877414" version="1.0"/>
+</session>

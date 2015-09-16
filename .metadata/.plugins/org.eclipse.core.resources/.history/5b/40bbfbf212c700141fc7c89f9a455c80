@@ -1,0 +1,33 @@
+package com.March8;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Vector;
+
+public class CsvTest {
+	private String fileName=null;
+    private BufferedReader bufferedReader=null;
+    private Vector v=new Vector();
+
+    public CsvTest(String filename) throws IOException
+    {
+        this.fileName=filename;
+        bufferedReader=new BufferedReader(new FileReader(fileName));
+        String stemp;
+        while((stemp=bufferedReader.readLine())!=null)
+        {
+            if(!stemp.startsWith("#"))
+               v.add(stemp);
+        }
+    }
+    
+    
+    
+	
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

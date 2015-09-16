@@ -1,0 +1,15 @@
+package com.March10;
+
+import java.io.BufferedReader;
+
+public class CSVTestExcel {
+	
+	//Declaration of stream
+	private BufferedReader inStream= null;
+	
+	//Declaration of return vector
+	private Vector<String> = null;
+	
+	
+	
+}

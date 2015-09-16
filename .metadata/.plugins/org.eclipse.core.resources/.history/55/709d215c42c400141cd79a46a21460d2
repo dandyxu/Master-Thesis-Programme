@@ -1,0 +1,13 @@
+package com.March5;
+
+import java.util.Scanner;
+
+public class CSVRecognize {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please input the metric name to start: ");
+		int i = sc.nextInt();
+		
+	}
+
+}
